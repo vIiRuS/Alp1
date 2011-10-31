@@ -51,7 +51,7 @@ test x y z
 	| otherwise = x < z
 
 test2 :: Integer -> Integer -> Integer -> Bool
-test2 x y z = if x <= y then True else z < y
+test2 x y z = if x <= y then True else False
 
 
 -- Aufgabe 5
