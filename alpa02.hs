@@ -23,6 +23,7 @@ zeitConvert (h, m)
 	| h == 0 = "12:" ++ show (m) ++ " a.m."
 	| h == 12 && m == 0 = "12:00 noon"
 	| h < 12 = show (h) ++ ":" ++ show (m) ++ " a.m."
+	| h == 12 = "12:" ++ show (m) ++ " p.m."
 	| otherwise = show (h-12) ++ ":" ++ show (m) ++ " p.m."
 
 
