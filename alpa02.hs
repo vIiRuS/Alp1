@@ -86,3 +86,16 @@ perfekteZahlen 1001 liste = liste
 perfekteZahlen x liste
 	| x == sum (teilerliste x) = perfekteZahlen (x+1) (liste ++ [x])
 	| otherwise = perfekteZahlen (x+1) (liste)
+
+-- Aufgabe 5 (Friedrich)
+-- a
+teiler :: Int -> [Int]
+teiler n = [a | a <- [1...(n-1)], mod n a == 0]
+
+-- b
+liste :: [(Int, Int)]
+liste = [z | z <- [1...1000], sum (teiler z) > z
+
+-- c
+liste2 :: [(Int, Int)]
+liste2 = [(a, sum (teiler a)) | a <- [1...1000], sum (teiler a) == a]
