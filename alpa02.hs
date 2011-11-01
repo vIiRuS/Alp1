@@ -89,13 +89,13 @@ perfekteZahlen x liste
 
 -- Aufgabe 5 (Friedrich)
 -- a
-teiler :: Int -> [Int]
-teiler n = [a | a <- [1...(n-1)], mod n a == 0]
+aufg5 :: Int -> [Int]
+aufg5 n = [a | a <- [1..(n-1)], mod n a == 0]
 
 -- b
-liste :: [(Int, Int)]
-liste = [z | z <- [1...1000], sum (teiler z) > z
+liste :: [Int]
+liste = [z | z <- [1..1000], sum (aufg5 z) > z]
 
 -- c
-liste2 :: [(Int, Int)]
-liste2 = [(a, sum (teiler a)) | a <- [1...1000], sum (teiler a) == a]
+liste2 :: [Int]
+liste2 = [a | a <- [1..1000], sum (aufg5 a) == a]
