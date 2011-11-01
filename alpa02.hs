@@ -52,6 +52,8 @@ test x y z
 
 test2 :: Integer -> Integer -> Integer -> Bool
 test2 x y z = if x <= y then True else False
+-- Bonus
+test3 x y z = x <= y
 
 
 -- Aufgabe 5
