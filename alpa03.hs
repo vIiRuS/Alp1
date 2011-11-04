@@ -6,7 +6,7 @@
 -- [Phillip Thelen]
 -- -----------------------------------------------------------------------------
 
--- ALP I - Übungszettel 1
+-- ALP I - Übungszettel 3
 
 -- Aufgabe I: Gültigkeitsbereiche (10+10 Punkte)
 -- (a) (Nur teilweise gelöst!)
