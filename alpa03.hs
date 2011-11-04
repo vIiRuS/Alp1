@@ -29,7 +29,7 @@ f x y = -- (f: global, x, y: innerhalb der Funktion)
 			where
 				xys = [x] ++ yxs -- (xys: innerhalb von g)
 				yxs = [y] ++ xys -- (yxs: innerhalb von g)
-		n = 10 -- (n: innerhalb der Funktion)
+				n = 10 -- (n: innerhalb der Funktion)
 
 
 -- Aufgabe II: (10 Punkte)
@@ -45,7 +45,7 @@ preis :: Preisliste -> Einkaufsliste -> (Float,[String])
 preis preise einkauf = ((gesamtpreis preise einkauf), (nichtvorhanden preise einkauf))
 
 gesamtpreis :: Preisliste -> Einkaufsliste -> Float
-gesamtpreis preise einkauf = sum [ (snd x) * (snd y) | x <- preise,	 y <- einkauf, (fst x) == (fst y)]
+gesamtpreis preise einkauf = sum [ (snd x) * (snd y) | x <- preise, y <- einkauf, (fst x) == (fst y)]
 
 nichtvorhanden :: Preisliste -> Einkaufsliste -> [String]
 nichtvorhanden preise einkauf = [ (fst x) | x <- einkauf, not (elem (fst x) (map fst preise))]
@@ -55,7 +55,7 @@ preis2 :: Preisliste -> Einkaufsliste -> (Float,[String])
 preis2 preise einkauf = ((gesamtpreis2 preise einkauf), (nichtvorhanden2 preise einkauf))
 
 gesamtpreis2 :: Preisliste -> Einkaufsliste -> Float
-gesamtpreis2 preise einkauf = sum [ (snd x) * (snd y) | x <- preise,	 y <- einkauf, (fst x) == (fst y)]
+gesamtpreis2 preise einkauf = sum [ (fromIntegral (round ((snd x)*100))/100) * (snd y) | x <- preise, y <- einkauf, (fst x) == (fst y)]
 
 nichtvorhanden2 :: Preisliste -> Einkaufsliste -> [String]
 nichtvorhanden2 preise einkauf = [ (fst x) | x <- einkauf, not (elem (fst x) (map fst preise))]
