@@ -70,7 +70,10 @@ iter n f x
 -- iter :: Typ von n -> Typ von f (wobei f :: Typ von x) -> Typ von x
 
 -- (b)
--- Unklare Aufgabe. Eine definition ohne x wäre sinnlos, da kein Parameter da ist, auf den die Funktion f ausgeführt wird
+iter2 :: Int -> (a -> a) -> a -> a
+iter2 n f
+      | n == 0 = id
+      | n > 0  = f.(iter (n-1) f)
 
 -- (c)
 -- zinsen :: Int -> Int -> Float
@@ -104,7 +107,7 @@ potenz x n = iter n (x*) 1
 
 -- (a)
 turm :: Integer -> Integer -> Integer
-turm x k = iter k (potenz x) x
+turm x k = iter (k-1) (potenz x) x
 
 -- (b)
 mal :: Integer -> Integer -> Integer
@@ -113,7 +116,9 @@ mal a b = iter (b-1) (a+) a
 -- (c)
 -- Man muss (+) iterieren
 plus a b = iter 1 (a+) b
--- Keine Ahnung ob das die Lösung ist.. erscheint mir selbst, ist aber das einzige logische.
+-- alternativ:
+plus2 a b = iter a (1+) b
+-- das erste ist effizienter, wobei das zweite auch "korrekt" iteriert.
 
 -- Aufgabe VII: Funktionsiteration (10 Punkte)
 -- (a)
@@ -122,7 +127,13 @@ g = iter 23
 entdecke f = f (1+) 0
 
 -- (b)
-sumiter f g = iter ((iter (entdecke f) (1+) 0)+(iter (entdecke g) (1+) 0))
+sumiter :: (a -> b -> c) -> (a -> c -> d) -> a -> b -> d
+sumiter f g h = (g h).(f h)
 
 -- (c)
+<<<<<<< HEAD
 proditer f g = iter ((iter (entdecke f) (1+) 0)*(iter (entdecke g) (1+) 0))
+=======
+proditer :: (b -> c) -> (a -> b) -> a -> c
+proditer = (.)
+>>>>>>> Blatt 3 Vollständig.
