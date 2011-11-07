@@ -66,7 +66,8 @@ iter n f x
 	| n==0 =x
 	| n>0   = f (iter (n-1) f x)
 -- (a)
--- iter hat den gleichen Typ, wie die Funktion x.
+-- Der Typ von iter ist abhängig von den Typen von n, vom Typ der Funktion, und von x
+-- iter :: Typ von n -> Typ von f (wobei f :: Typ von x) -> Typ von x
 
 -- (b)
 -- Unklare Aufgabe. Eine definition ohne x wäre sinnlos, da kein Parameter da ist, auf den die Funktion f ausgeführt wird
