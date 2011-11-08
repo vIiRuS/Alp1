@@ -6,7 +6,7 @@
 -- [Phillip Thelen]
 -- -----------------------------------------------------------------------------
 
--- Aufgabe 1
+-- Aufgabe 7
 zeitdifferenz :: (Int, Int) -> (Int, Int) -> (Int, Int)
 zeitdifferenz (h1, m1) (h2, m2) = inStunden (inMinuten h2 m2 - inMinuten h1 m1)
 
@@ -16,7 +16,7 @@ inMinuten h m = h*60 + m
 inStunden :: Int -> (Int, Int)
 inStunden m = (div m 60, mod m 60) 
 
--- Aufgabe 2
+-- Aufgabe 8
 zeitConvert :: (Int, Int) -> String
 zeitConvert (h, m)
 	| h == 0 && m == 0 = "12:00 midnight"
@@ -27,7 +27,7 @@ zeitConvert (h, m)
 	| otherwise = show (h-12) ++ ":" ++ show (m) ++ " p.m."
 
 
--- Aufgabe 3
+-- Aufgabe 9
 multitabelle :: IO ()
 multitabelle = putStr ("   |   1   2   3   4   5   6   7   8   9  10\n---+----------------------------------------\n" ++ tabellenreihe 1)
 
@@ -44,7 +44,7 @@ stringspaces len str
 	| length str == len = str
 	| otherwise = stringspaces len (" " ++ str)
 
--- Aufgabe 4
+-- Aufgabe 10
 test x y z
 	| x <= y    = True
 	| y <= z    = False
@@ -56,7 +56,7 @@ test2 x y z = if x <= y then True else False
 test3 x y z = x <= y
 
 
--- Aufgabe 5
+-- Aufgabe 11
 -- (a)
 teilerliste :: Integer -> [Integer]
 teilerliste zahl = teiler zahl (div zahl 2) []
@@ -89,7 +89,7 @@ perfekteZahlen x liste
 	| x == sum (teilerliste x) = perfekteZahlen (x+1) (liste ++ [x])
 	| otherwise = perfekteZahlen (x+1) (liste)
 
--- Aufgabe 5 (Friedrich)
+-- Aufgabe 10 (Friedrich)
 -- a
 aufg5 :: Int -> [Int]
 aufg5 n = [a | a <- [1..(n-1)], mod n a == 0]

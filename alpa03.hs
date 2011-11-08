@@ -8,7 +8,7 @@
 
 -- ALP I - Übungszettel 3
 
--- Aufgabe I: Gültigkeitsbereiche (10+10 Punkte)
+-- Aufgabe 12: Gültigkeitsbereiche (10+10 Punkte)
 -- (a) (Nur teilweise gelöst!)
 x = 25:: Integer -- (x: global)
 biggerThanAVG3:: Integer->Integer->Integer->Integer
@@ -32,12 +32,12 @@ f x y = -- (f: global, x, y: innerhalb der Funktion)
 				n = 10 -- (n: innerhalb der Funktion)
 
 
--- Aufgabe II: (10 Punkte)
+-- Aufgabe 13: (10 Punkte)
 kleinderDurch :: [Int] -> Int
 kleinderDurch liste = length [x | x <- liste , (x*(length liste)) < (sum liste)]
 
 
--- Aufgabe III: Preisberechnung (10 Punkte)
+-- Aufgabe 14: Preisberechnung (10 Punkte)
 type Einkaufsliste = [(String, Float)]
 type Preisliste    = [(String, Float)]
 -- (a)
@@ -61,7 +61,7 @@ nichtvorhanden2 :: Preisliste -> Einkaufsliste -> [String]
 nichtvorhanden2 preise einkauf = [ (fst x) | x <- einkauf, not (elem (fst x) (map fst preise))]
 
 
--- Aufgabe IV: Funktionsiteration (10 Punkte)
+-- Aufgabe 15: Funktionsiteration (10 Punkte)
 iter n f x
 	| n==0 =x
 	| n>0   = f (iter (n-1) f x)
@@ -86,7 +86,7 @@ endwert zinsfuß kapital = kapital + zinsen kapital zinsfuß -- siehe alpa01.hs 
 zinsiter kapital zinsfuß = iter 2 (endwert zinsfuß) kapital
 
 
--- Aufgabe V: Iterierter Logarithmus (10 Punkte)
+-- Aufgabe 16: Iterierter Logarithmus (10 Punkte)
 -- (a)
 smallLogBase1 :: Float -> Float
 smallLogBase1 x
@@ -102,7 +102,7 @@ smallLogBase2 x
 -- -> 65536
 
 
--- Aufgabe VI: Potenzieren, Summe und Produkt (10 Punkte)
+-- Aufgabe 17: Potenzieren, Summe und Produkt (10 Punkte)
 potenz x n = iter n (x*) 1
 
 -- (a)
@@ -120,7 +120,7 @@ plus a b = iter 1 (a+) b
 plus2 a b = iter a (1+) b
 -- das erste ist effizienter, wobei das zweite auch "korrekt" iteriert.
 
--- Aufgabe VII: Funktionsiteration (10 Punkte)
+-- Aufgabe 18: Funktionsiteration (10 Punkte)
 -- (a)
 g = iter 23
 

@@ -8,14 +8,14 @@
 
 -- ALP I - Übungszettel 4
 
--- Aufgabe I: Funktionen höherer Ordnung (5 Punkte)
+-- Aufgabe 19: Funktionen höherer Ordnung (5 Punkte)
 length' :: [a] -> Int
 length' xs = sum (map repl xs)
 
 repl :: a -> Int
 repl x = 1
 
--- Aufgabe II: Listenfunktionen (10 Punkte)
+-- Aufgabe 20: Listenfunktionen (10 Punkte)
 takeWhile' :: (a -> Bool) -> [a] -> [a]
 takeWhile' p [] = []
 takeWhile' p (x:xs)
@@ -25,21 +25,21 @@ takeWhile' p (x:xs)
 splitAt' :: Int -> [a] -> ([a],[a])
 splitAt' n xs  =  (take n xs, drop n xs) 
 
--- Aufgabe III: (5 Punkte)
+-- Aufgabe 21: (5 Punkte)
 
 map :: (Int -> Int -> Float) -> [Float] -> [Float]
 -- macht das Sinn?
 
--- Aufgabe IV: Nichtassoziative Faltung von Listen (10 Punkte)
+-- Aufgabe 22: Nichtassoziative Faltung von Listen (10 Punkte)
 differenzen :: Integer -> Integer -> Integer -> Integer
 differenzen a b c = foldr (-) a [b..c]
 
 
--- Aufgabe V: Strukturelle Induktion (40 Punkte)
+-- Aufgabe 23: Strukturelle Induktion (40 Punkte)
 
 
 
--- Aufgabe VI: Lauflängenkodierung (run-length encoding)
+-- Aufgabe 24: Lauflängenkodierung (run-length encoding)
 -- (a) (10 Punkte)
 kodieren :: [Char] -> [(Int, Char)]
 kodieren [] = []
