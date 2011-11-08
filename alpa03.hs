@@ -124,6 +124,7 @@ plus2 a b = iter a (1+) b
 -- (a)
 g = iter 23
 
+entdecke :: (Num a, Num b) => ((a -> a) -> b -> c) -> c
 entdecke f = f (1+) 0
 
 -- (b)
