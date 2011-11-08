@@ -131,9 +131,5 @@ sumiter :: (a -> b -> c) -> (a -> c -> d) -> a -> b -> d
 sumiter f g h = (g h).(f h)
 
 -- (c)
-<<<<<<< HEAD
-proditer f g = iter ((iter (entdecke f) (1+) 0)*(iter (entdecke g) (1+) 0))
-=======
 proditer :: (b -> c) -> (a -> b) -> a -> c
 proditer = (.)
->>>>>>> Blatt 3 Vollständig.
