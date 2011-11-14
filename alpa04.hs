@@ -20,14 +20,14 @@ takeWhile' :: (a -> Bool) -> [a] -> [a]
 takeWhile' p [] = []
 takeWhile' p (x:xs)
 	| p x = x:(takeWhile' p xs)
-	| otherwise = takeWhile' p xs
+	| otherwise = []
 
 splitAt' :: Int -> [a] -> ([a],[a])
 splitAt' n xs  =  (take n xs, drop n xs) 
 
 -- Aufgabe 21: (5 Punkte)
 
-map :: (Int -> Int -> Float) -> [Float] -> [Float]
+-- map :: (Int -> Int -> Float) -> [Float] -> [Float]
 -- macht das Sinn?
 
 -- Aufgabe 22: Nichtassoziative Faltung von Listen (10 Punkte)
