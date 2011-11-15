@@ -36,8 +36,29 @@ differenzen a b c = foldr (-) a [b..c]
 
 
 -- Aufgabe 23: Strukturelle Induktion (40 Punkte)
+-- (a)
+-- Induktionsbasis
+-- map f [] ++ b = map f [] ++ map f b
+
+-- Induktionsaussage
+-- map f (xs ++ b) = map f xs ++ map f b
+
+-- Induktionsbehauptung
+-- map f (x:xs) ++ b = map f (x:xs) ++ map f b
+
+-- linke Seite
+-- map f (x:xs) ++ b
+-- = map f x:(xs ++ b)
+-- = [f x] ++ map f (xs ++ b)
+-- [f x] ++ map f xs ++ map f b
+
+-- rechte Seite
+-- [f x] ++ map f xs ++ map f b
 
 
+-- (b)
+foldr g z (a ++ b)
+= foldr g (foldr g z b) a
 
 -- Aufgabe 24: Lauflängenkodierung (run-length encoding)
 -- (a) (10 Punkte)
