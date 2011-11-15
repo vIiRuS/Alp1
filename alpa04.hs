@@ -38,7 +38,7 @@ differenzen a b c = foldr (-) a [b..c]
 -- Aufgabe 23: Strukturelle Induktion (40 Punkte)
 -- (a)
 -- Induktionsbasis
--- map f [] ++ b = map f [] ++ map f b
+-- map f ([] ++ b) = map f [] ++ map f b
 
 -- Induktionsaussage
 -- map f (xs ++ b) = map f xs ++ map f b
