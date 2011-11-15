@@ -57,8 +57,9 @@ differenzen a b c = foldr (-) a [b..c]
 
 
 -- (b)
-foldr g z (a ++ b)
-= foldr g (foldr g z b) a
+-- foldr g z (a ++ b)
+-- = foldr g (foldr g z b) a
+
 
 -- Aufgabe 24: Lauflängenkodierung (run-length encoding)
 -- (a) (10 Punkte)
