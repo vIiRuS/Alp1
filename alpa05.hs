@@ -25,12 +25,10 @@ ssort :: Eq a => Ord a => [a] -> [a]
 ssort [] = []
 ssort xs = m:(ssort rest)
     where
-        m = minimum2 xs
+        m = foldr (min) (last xs) (init xs)
         rest = delete m xs
  
-minimum2 (x:[]) = x
-minimum2 (x:xs) = min x (minimum2 xs)
- 
+delete :: Eq a => a->[a]->[a]
 delete e (x:xs)
 	| e == x = xs
 	| otherwise = x:(delete e xs)
