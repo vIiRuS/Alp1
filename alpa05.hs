@@ -21,7 +21,19 @@
 
 
 -- Aufgabe 29: Sortieren durch Auswählen (10 Punkte)
-
+ssort :: Eq a => Ord a => [a] -> [a]
+ssort [] = []
+ssort xs = m:(ssort rest)
+    where
+        m = minimum2 xs
+        rest = delete m xs
+ 
+minimum2 (x:[]) = x
+minimum2 (x:xs) = min x (minimum2 xs)
+ 
+delete e (x:xs)
+	| e == x = xs
+	| otherwise = x:(delete e xs)
 
 -- Aufgabe 30: Verbinden von Listen, Faltung (5 Punkte)
 
