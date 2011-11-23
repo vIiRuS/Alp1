@@ -29,9 +29,9 @@ ssort xs = m:(ssort rest)
         rest = delete m xs
  
 delete :: Eq a => a->[a]->[a]
-delete e (x:xs)
-	| e == x = xs
-	| otherwise = x:(delete e xs)
+delete m (x:xs)
+	| m == x = xs
+	| otherwise = x:(delete m xs)
 
 -- Aufgabe 30: Verbinden von Listen, Faltung (5 Punkte)
 
