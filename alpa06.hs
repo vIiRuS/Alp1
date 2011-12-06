@@ -40,6 +40,9 @@ loeschleer xs = filter (/= ' ') xs
 
 
 -- Aufgabe 37: Strenge Funktionen (7 Punkte)
+-- für doppel n a = a*a -- nur a
+-- für f1 n a = if n==0 then a+1 else a-n -- n und a
+-- für f2 n a = in n==0 then a+1 else n -- n steng (a nur bedingt)
 
 -- Aufgabe 38: Träge Multiplikation (5 Punkte)
 mult :: Num a => a -> a -> a
