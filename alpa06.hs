@@ -71,7 +71,7 @@ data Baum' a = Blatt a
 
 baumk = Knoten 27 (Knoten 5 (Blatt (-2)) (Blatt 7)) (Knoten 44 (Blatt 8) (Knoten 5 (Blatt 7) (Blatt 9)))
 
--- baumkodierung ::
+baumkodierung :: Baum' Int -> String
 baumkodierung (Blatt a) = (show a)
 baumkodierung (Knoten a x1 x2) = (show a) ++ "D" ++ (baumkodierung x1) ++ "U" ++ "D" ++ (baumkodierung x2) ++ "U"
 
