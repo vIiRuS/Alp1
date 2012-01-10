@@ -31,8 +31,11 @@ b = Knoten 10 "xy" (Knoten 4 "ab" Leer Leer) Leer
 
 height :: Ord a => (Suchbaum a b) -> Int
 height Leer = (-1)
-height (Knoten a b lb rb)
-	| (height lb + 1) > (height rb +1) = (height lb +1)
-	| otherwise = (height rb +1)
+height (Knoten _ _ lb rb) = 1 + max (height lb) (height rb)
 
 -- Aufgabe 64: Bäume (10 Punkte)
+data Baum a = BLeer | BKnoten a (Baum a) (Baum a)
+
+heightBaum :: (Ord a) => (Suchbaum a b) -> Int -> (Baum Int)
+heightBaum Leer _ = BLeer
+heightBaum (Knoten _ _ lb rb) i= BKnoten i (heightBaum lb (i+1)) (heightBaum rb (i+1))
