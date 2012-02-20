@@ -1,0 +1,30 @@
+Seien folgende Gleichungen gegeben:
+++.1  :    []  ++ ys =ys
+++.2  : (x:xs) ++ ys = x:(xs ++ ys)
+rev.1 : reverse [] = []
+rev.2 : reverse (x:xs)= reverse xs ++ [x]
+rev.3 : reverse (xs ++ ys) = (reverse ys) ++ (reverse xs)
+Beweisen Sie mit struktureller Induktion folgende Behauptung: 
+
+reverse (reverse xs) = xs
+
+Induktionsanker(xs = [])
+
+(1) reverse ( reverse [] ) = reverse [] = []
+(2) []
+
+
+Induktionsvorraussetzung
+
+reverse (reverse xs) = xs
+
+
+Induktionsschritt
+
+reverse ( reverse (x:xs)) = x:xs
+
+reverse ( reverse (x:xs)) 	= reverse ( reverse xs ++ [x] )
+							= reverse( [x] ) ++ reverse ( reverse xs )
+							= reverse( [x] ) ++ xs
+							= [x] ++ xs
+							= x:xs
